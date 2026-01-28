@@ -1,6 +1,13 @@
 import os
 import argparse
+
+# ---【新增】强制禁用 cuDNN 自动调优，解决 DNN library initialization failed ---
+os.environ['TF_CUDNN_DETERMINISTIC'] = '1'
+os.environ['TF_CUDNN_USE_AUTOTUNE'] = '0'
+# -----------------------------------------------------------------------
+
 # 1. 先导入 TensorFlow
+import tensorflow as tf
 import tensorflow as tf
 
 # ==========================================
